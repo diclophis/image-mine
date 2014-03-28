@@ -16,13 +16,13 @@ if (system.args.length == 2) {
   //});
 
   var startPage = 1;
-  var endPage = 500;
+  var endPage = 7;
   var currentPage = startPage;
 
   var processPage = function(pageNumber) {
     var deferred = Q.defer();
     var future = deferred.promise;
-    var url = address + '&p=' + pageNumber;
+    var url = address + pageNumber;
     page.open(url, function (status) {
       if (status !== 'success') {
         console.log('Unable to load the address!');
@@ -44,6 +44,9 @@ if (system.args.length == 2) {
             if (h && I(h)) {
               console.log(hE(h));
             }
+          }
+          for (i = 0; q = document.images[i]; ++i) {
+            console.log(q.src);
           }
         };
         window.setTimeout(function () {
